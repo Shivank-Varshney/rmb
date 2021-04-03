@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Dashboard from "./assets/component/Dashboard";
+import Team from "./assets/component/Team";
+import Income from "./assets/component/Income";
+import PaymentHistory from "./assets/component/PaymentHistory";
+import ContactUs from "./assets/component/ContactUs";
+import FreeLink from "./assets/component/FreeLink";
+import Home from "./assets/component/Home";
+import Login from "./assets/component/Login";
+import Registration from "./assets/component/Registration";
+import {Redirect, Route, Switch } from 'react-router-dom'; 
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+  return(
+    <React.Fragment> 
+        <Switch> 
+            <Route exact path='/' component={Home} />
+            <Route exact path='/login' component={Login} /> 
+            <Route exact path='/registration' component={Registration} />
+            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/team' component={Team} />
+            <Route exact path='/income' component={Income} /> 
+            <Route exact path='/paymenthistory' component={PaymentHistory} /> 
+            <Route exact path='/contactus' component={ContactUs} /> 
+            <Route exact path='/freelink' component={FreeLink} /> 
+            <Redirect to="/" />
+        </Switch>
+    </React.Fragment>
   );
 }
 

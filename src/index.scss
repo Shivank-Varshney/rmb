@@ -1,0 +1,175 @@
+$primary-color: #3B5F9D;
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+//////////Navbar Start//////////////////////
+.navbar{
+  background-color: #ACB6E5;
+  .navbar-icon{
+    color: #ffffff;
+    background-color: #262666;
+  }
+  .navbar-text{
+    color: #000;
+    font-size: 40px;
+    text-transform: capitalize;
+  }
+  .img-fluid{
+    height: 40px;
+  }
+  .MuiSvgIcon-root{
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .navbar{
+    .navbar-text{
+      font-size: 30px;
+    }
+    .img-fluid{
+      height: 40px;
+    }
+    .MuiSvgIcon-root{
+      font-size: 30px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .navbar{
+    .navbar-text{
+      font-size: 20px;
+    }
+    .img-fluid{
+      height: 20px;
+    }
+    .MuiSvgIcon-root{
+      font-size: 20px;
+    }
+  }
+}
+//////////Navbar End///////////////////////
+
+/////////Dashboard Start////////////////////
+
+#dashboard{
+  background-image: linear-gradient(#ACB6E5, #86FDE8);
+  height: 100vh;
+}
+
+////////Dashboard End/////////////////////////
+
+////////Login Page Start/////////////////////
+#login-page{
+  background-image: linear-gradient(#ACB6E5, #86FDE8);
+  .inner-login{
+    box-shadow: 1px 1px 15px 0px #000;
+  }
+  .img-fluid{
+    height: 100vh;
+    width: 100%;
+  }
+  h1{
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  p{
+    color: $primary-color;
+    text-align: center;
+  }
+  form{
+    padding: 40px 120px 0;
+    .form-control{
+      border: none;
+      box-shadow: none;
+      border-bottom: 2px solid $primary-color;
+      border-radius: 0;
+    }
+    .btn-login{
+      background-image: linear-gradient( to right, #3B5F9D,  #637aa3);
+      color: #ffffff;
+      border: none;
+      padding: 2px 80px;
+      border-radius: 5px;
+      display: flex;
+      margin: 30px auto 20px;
+    }
+  }
+  .links{
+    color: $primary-color;
+    margin: 0 auto;
+    text-transform: capitalize;
+  }
+}
+@media screen and (max-width: 1080px) {
+  #login-page{
+    form{
+      padding: 20px 0 0;
+      }
+      .btn-login{
+        padding: 2px 20px;
+        margin: 20px auto;
+      }
+    }
+  }
+////////Login Page End///////////////////////
+
+////////Registration Page Start/////////////////////
+#registration-page{
+  background-image: linear-gradient(#ACB6E5, #86FDE8);
+  .inner-regis{
+    box-shadow: 1px 1px 15px 0px #000;
+  }
+  .img-fluid{
+    height: 100vh;
+    width: 100%;
+  }
+  h1{
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  p{
+    color: $primary-color;
+    text-align: center;
+  }
+  form{
+    padding: 40px 120px 0;
+    .form-control{
+      border: none;
+      box-shadow: none;
+      border-bottom: 2px solid $primary-color;
+      border-radius: 0;
+    }
+    .btn-login{
+      background-image: linear-gradient( to right, #3B5F9D,  #637aa3);
+      color: #ffffff;
+      border: none;
+      padding: 2px 80px;
+      border-radius: 5px;
+      display: flex;
+      margin: 30px auto 20px;
+    }
+  }
+  .links{
+    color: $primary-color;
+    margin: 0 auto;
+    text-transform: capitalize;
+  }
+}
+@media screen and (max-width: 1080px) {
+  #registration-page{
+    form{
+      padding: 20px 0 0;
+      }
+      .btn-login{
+        padding: 2px 20px;
+        margin: 20px auto;
+      }
+    }
+  }
+////////Registration Page End///////////////////////
