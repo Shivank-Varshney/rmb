@@ -1,10 +1,9 @@
 import React from "react";
 import Dashboard from "./assets/component/Dashboard";
-import Team from "./assets/component/Team";
-import Income from "./assets/component/Income";
-import PaymentHistory from "./assets/component/PaymentHistory";
-import ContactUs from "./assets/component/ContactUs";
-import FreeLink from "./assets/component/FreeLink";
+import Meter from "./assets/component/Meter";
+import Contact from "./assets/component/Contact";
+import Data from "./assets/component/Data";
+import Calender from "./assets/component/Calender";
 import Home from "./assets/component/Home";
 import Login from "./assets/component/Login";
 import Registration from "./assets/component/Registration";
@@ -19,11 +18,10 @@ const App = () => {
             <Route exact path='/login' component={Login} /> 
             <Route exact path='/registration' component={Registration} />
             <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/team' component={Team} />
-            <Route exact path='/income' component={Income} /> 
-            <Route exact path='/paymenthistory' component={PaymentHistory} /> 
-            <Route exact path='/contactus' component={ContactUs} /> 
-            <Route exact path='/freelink' component={FreeLink} /> 
+            <Route exact path='/dashboard/meter' component={Meter} />
+            <Route exact path='/dashboard/contact' component={Contact} /> 
+            <Route exact path='/dashboard/data' component={Data} /> 
+            <Route exact path='/dashboard/calender' component={Calender} />
             <Redirect to="/" />
         </Switch>
     </React.Fragment>
