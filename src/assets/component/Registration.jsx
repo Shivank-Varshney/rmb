@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import Regisillustration from "../image/rmb-regis.png";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 const Registration = () => {
+    const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+    
 
     const [data, setData] = useState(
         {
+            name : "",
             email : "",
             password : "",
             number: ""
@@ -26,9 +34,19 @@ const Registration = () => {
 
     const formSubmit = (e) => {
         e.preventDefault();
-        alert(`Email: ${data.email}. Password: ${data.password}. Number: ${data.number}`)
-
+        console.log("done");
+        axios.post(
+      "http://backend.rmbpaisa.co.in/addMember",
+      {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        number: data.number,
+      },
+      config
+    );
     }
+
     return(
         <>
             <div className="container-fluid py-3" id="registration-page">
@@ -43,6 +61,10 @@ const Registration = () => {
                                     <h1>User Registration</h1><br />
                                     <p>Welcome back</p>
                                     <form onSubmit={formSubmit}>
+                                        <div className="form-group my-2">
+                                            <label className="sr-only" htmlFor="InputName">Name</label>
+                                            <input type="name" className="form-control" name="name" value={data.name} onChange={InputEvent} id="InputName" placeholder="Enter your name" />
+                                        </div>
                                         <div className="form-group my-2">
                                             <label className="sr-only" htmlFor="exampleInputEmail1">Email address</label>
                                             <input type="email" className="form-control" name="email" value={data.email} onChange={InputEvent} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" />
