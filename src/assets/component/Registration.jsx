@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Regisillustration from "../image/rmb-regis.png";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import {NavLink} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import axios from "axios";
 
 const Registration = () => {
+    const [refferid, setrefferid] = useState(null)
+    let {userid} = useParams();
+    useEffect(() => {
+        setrefferid(userid)
+        console.log(userid);
+    },[])
+
     const config = {
         headers: {
           "Content-Type": "application/json",
@@ -77,10 +84,23 @@ const Registration = () => {
                                             <label className="sr-only" htmlFor="InputNumber">Mobile Number</label>
                                             <input type="text" className="form-control" name="number" value={data.number} onChange={InputEvent} id="InputNumber" placeholder="Mobile No." />
                                         </div>
+                                        {
+                                            refferid ? (
+                                                <>
+                                                <div className="form-group my-2">
+                                                    <input type="text" value={refferid} className="form-control"name="refferid" id="refferid" placeholder="Reffer id." />
+                                                </div>
+                                                <div className="form-group my-2">
+                                                    <input type="text" className="form-control" name="reffername" id="reffername" placeholder="reffer name." />
+                                                </div>
+                                                </>
+                                            ):""
+                                        }
                                         <button type="submit" className="btn-login">Continue <ChevronRightIcon /></button>
                                     </form>
                                     <div className="text-center">
                                         <NavLink to="/login" className="links">Login Now</NavLink><br />
+                                        <p></p>
                                     </div>
                                 </div>
                             </div>

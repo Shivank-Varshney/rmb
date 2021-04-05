@@ -7,7 +7,7 @@ import Calender from "./assets/component/Calender";
 import Home from "./assets/component/Home";
 import Login from "./assets/component/Login";
 import Registration from "./assets/component/Registration";
-import {Redirect, Route, Switch } from 'react-router-dom'; 
+import {Redirect, Route, Switch} from 'react-router-dom'; 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
         <Switch> 
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} /> 
-            <Route exact path='/registration' component={Registration} />
+            <Route exact path='/registration/:userid?' component={Registration} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/dashboard/meter' component={Meter} />
             <Route exact path='/dashboard/contact' component={Contact} /> 
